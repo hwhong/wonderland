@@ -1,0 +1,33 @@
+.root {
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0 auto;
+  display: grid;
+  filter: blur(60px);
+  height: 300px;
+  width: 300px;
+}
+
+.topLeft {
+  background-color: #b9cabb;
+  height: 130px;
+  width: 150px;
+}
+
+.topRight {
+  background-color: #dddc30;
+  height: 130px;
+  width: 150px;
+}
+
+.bottomLeft {
+  background-color: #ee65ae;
+  height: 170px;
+  width: 150px;
+}
+
+.bottomRight {
+  background-color: #1a65fe;
+  border-radius: 50%;
+  height: 170px;
+  width: 150px;
+}
