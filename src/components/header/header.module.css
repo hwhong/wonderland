@@ -1,0 +1,33 @@
+.root {
+  font-family: "Circular-Std-Bold", sans-serif;
+  text-rendering: optimizeLegibility;
+  background: linear-gradient(
+    to left,
+    #b132f2,
+    #ea3b91,
+    #f5bd43,
+    #de8234,
+    #e94425,
+    #ea3b91
+  );
+  background-size: 1000px 100%;
+  animation: bg 30s linear infinite;
+  /* -webkit-background-clip: text; */
+  letter-spacing: -1.4px;
+  background-clip: text;
+  text-transform: none;
+  margin-bottom: 20px;
+  text-align: center;
+  color: transparent;
+  font-weight: 700;
+  font-size: 5em;
+}
+
+@keyframes bg {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 10000px;
+  }
+}
