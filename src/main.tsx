@@ -3,6 +3,7 @@ import styles from "./main.module.css";
 import { Header } from "./components/header/header";
 import { Cursor } from "./components/cursor/cursor";
 import { ColorBlur } from "./components/color-blur/color-blur";
+import { ScrollListener } from "./components/scroll-listener/scroll-listener";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Header>Wonderland</Header>
       <Cursor />
       <ColorBlur />
+      <ScrollListener />
     </div>
   );
 }
