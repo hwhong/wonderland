@@ -9,9 +9,18 @@ export function ScrollListener() {
       console.log(scroll);
       ref.current?.setAttribute(
         "transform",
-        `translateY(${-scroll}px) scale(${scroll * 0.1});`
+        `translateY(${-scroll}px) scale(${0.1});`
       );
     });
   }, []);
-  return <div ref={ref} className={styles.root}></div>;
+  return (
+    <div
+      ref={ref}
+      className={styles.root}
+      onClick={(e) => {
+        console.log(e.currentTarget);
+        e.currentTarget.setAttribute("transform", "scale(2, 0.5);");
+      }}
+    ></div>
+  );
 }
