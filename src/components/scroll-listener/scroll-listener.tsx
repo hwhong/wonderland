@@ -7,20 +7,18 @@ export function ScrollListener() {
     window.addEventListener("scroll", function (event) {
       var scroll = this.scrollY;
       console.log(scroll);
-      ref.current?.setAttribute(
-        "transform",
-        `translateY(${-scroll}px) scale(${0.1});`
-      );
+      console.log(ref);
+      if (ref.current) {
+        ref.current.setAttribute(
+          "style",
+          `transform: scale(${0.01 * scroll});`
+        );
+      }
     });
   }, []);
   return (
-    <div
-      ref={ref}
-      className={styles.root}
-      onClick={(e) => {
-        console.log(e.currentTarget);
-        e.currentTarget.setAttribute("transform", "scale(2, 0.5);");
-      }}
-    ></div>
+    <div ref={ref} className={styles.root}>
+      Hello
+    </div>
   );
 }
