@@ -6,7 +6,7 @@ export function ScrollListener() {
   useEffect(() => {
     window.addEventListener("scroll", function (event) {
       var scroll = this.scrollY;
-      console.log(scroll);
+
       console.log(ref);
       if (ref.current) {
         ref.current.setAttribute(
