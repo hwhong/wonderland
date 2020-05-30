@@ -1,0 +1,18 @@
+.root {
+  position: absolute;
+  left: -30vw;
+  top: -50vh;
+  filter: blur(100px);
+  overflow: hidden;
+  animation: move 10s ease-in-out infinite;
+}
+
+@keyframes move {
+  40% {
+    transform: translate(40vw, 0vh);
+  }
+
+  80% {
+    transform: translate(0vw, 0vh);
+  }
+}
