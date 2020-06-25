@@ -5,6 +5,7 @@ import { Cursor } from "./components/cursor/cursor";
 import { ColorBlur } from "./components/color-blur/color-blur";
 
 import { MovingBlob } from "./components/moving-blob/moving-blob";
+import { IpadCursor } from "./components/ipad-cursor/ipad-cursor";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <ColorBlur />
       {/* <ScrollListener /> */}
       {/* <MovingBlob /> */}
+      <IpadCursor />
     </div>
   );
 }
