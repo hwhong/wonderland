@@ -24,12 +24,29 @@ export function IpadCursor() {
     };
   }, []);
 
+  const debounce = <F extends (...args: any[]) => any>(
+    func: F,
+    waitFor: number
+  ) => {
+    let timeout: ReturnType<typeof setTimeout> | null = null;
+
+    const debounced = (...args: Parameters<F>) => {
+      if (timeout !== null) {
+        clearTimeout(timeout);
+        timeout = null;
+      }
+      timeout = setTimeout(() => func(...args), waitFor);
+    };
+
+    return debounced as (...args: Parameters<F>) => ReturnType<F>;
+  };
+
   const onMouseMove = (e: MouseEvent) => {
     const { pageX, pageY } = e;
     if (cursorRef.current) {
       cursorRef.current.setAttribute(
         "style",
-        `transform: translate3d(${pageX}px, ${pageY}px, 0);`
+        `left: ${pageX}px; top: ${pageY}px;`
       );
     }
   };
