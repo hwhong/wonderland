@@ -8,13 +8,16 @@ export function IpadCursor() {
 
   const onMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
     setIsCursorLocked(true);
-    const target = e.currentTarget;
-    const rect = target.getBoundingClientRect();
 
-    // cursor.style.setProperty("--top", rect.top + rect.height / 2 + "px");
-    // cursor.style.setProperty("--left", rect.left + rect.width / 2 + "px");
-    // cursor.style.setProperty("--width", rect.width + "px");
-    // cursor.style.setProperty("--height", rect.height + "px");
+    const rect = e.currentTarget.getBoundingClientRect();
+
+    if (cursorRef.current) {
+      console.log(cursorRef.current);
+      cursorRef.current.style.top = rect.top + rect.height / 2 + "px";
+      cursorRef.current.style.left = rect.left + rect.width / 2 + "px";
+      cursorRef.current.style.width = rect.width + "px";
+      cursorRef.current.style.height = rect.height + "px";
+    }
   };
 
   React.useEffect(() => {
@@ -44,26 +47,22 @@ export function IpadCursor() {
   const onMouseMove = (e: MouseEvent) => {
     const { pageX, pageY } = e;
     if (cursorRef.current) {
-      cursorRef.current.setAttribute(
-        "style",
-        `left: ${pageX}px; top: ${pageY}px;`
-      );
+      cursorRef.current.style.left = pageX + "px";
+      cursorRef.current.style.top = pageY + "px";
     }
   };
+
+  // really a reset, because it won't default back
+  // after we manually setted the size and all
+  const onMouseLeave = (e: MouseEvent) => {};
 
   return (
     <>
       <div
-        className={styles.outer}
+        className={classNames(styles.inner)}
         onMouseEnter={onMouseEnter}
         onMouseLeave={() => setIsCursorLocked(false)}
-      >
-        <div
-          className={classNames(styles.inner, {
-            [styles.selectedContent]: isCursorLocked,
-          })}
-        ></div>
-      </div>
+      ></div>
       <div ref={cursorRef} className={styles.cursorContent}></div>
     </>
   );
