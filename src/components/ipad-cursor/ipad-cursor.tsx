@@ -2,49 +2,20 @@ import React, { useEffect } from "react";
 import styles from "./ipad-cursor.module.css";
 import classNames from "classnames";
 
+const BASE_DIMENSION = 15;
+
 export function IpadCursor() {
   const [isCursorLocked, setIsCursorLocked] = React.useState(false);
   const cursorRef = React.useRef<HTMLDivElement>(null);
 
-  const onMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
-    setIsCursorLocked(true);
-
-    const rect = e.currentTarget.getBoundingClientRect();
-
-    if (cursorRef.current) {
-      console.log(cursorRef.current);
-      cursorRef.current.style.top = rect.top + rect.height / 2 + "px";
-      cursorRef.current.style.left = rect.left + rect.width / 2 + "px";
-      cursorRef.current.style.width = rect.width + "px";
-      cursorRef.current.style.height = rect.height + "px";
-    }
-  };
-
   React.useEffect(() => {
-    document.addEventListener("mousemove", onMouseMove);
+    document.addEventListener("mousemove", onMouseMoveDocument);
     return () => {
-      document.removeEventListener("mousemove", onMouseMove);
+      document.removeEventListener("mousemove", onMouseMoveDocument);
     };
   }, []);
 
-  const debounce = <F extends (...args: any[]) => any>(
-    func: F,
-    waitFor: number
-  ) => {
-    let timeout: ReturnType<typeof setTimeout> | null = null;
-
-    const debounced = (...args: Parameters<F>) => {
-      if (timeout !== null) {
-        clearTimeout(timeout);
-        timeout = null;
-      }
-      timeout = setTimeout(() => func(...args), waitFor);
-    };
-
-    return debounced as (...args: Parameters<F>) => ReturnType<F>;
-  };
-
-  const onMouseMove = (e: MouseEvent) => {
+  const onMouseMoveDocument = (e: MouseEvent) => {
     const { pageX, pageY } = e;
     if (cursorRef.current) {
       cursorRef.current.style.left = pageX + "px";
@@ -52,16 +23,61 @@ export function IpadCursor() {
     }
   };
 
+  const onMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
+    setIsCursorLocked(true);
+
+    const target = e.currentTarget.getBoundingClientRect();
+
+    if (cursorRef.current) {
+      cursorRef.current.style.top = `${target.top + target.height / 2}px`;
+      cursorRef.current.style.left = `${target.left + target.height / 2}px`;
+      cursorRef.current.style.width = `${target.width}px`;
+      cursorRef.current.style.height = `${target.height}px`;
+
+      e.currentTarget.style.scale = "1.05";
+    }
+  };
+
+  const onMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    if (cursorRef.current) {
+      const target = e.currentTarget;
+      const rect = target.getBoundingClientRect();
+
+      const halfHeight = rect.height / 2;
+      const topOffset = (rect.x - rect.top - halfHeight) / halfHeight;
+      const halfWidth = rect.width / 2;
+      const leftOffset = (rect.y - rect.left - halfWidth) / halfWidth;
+
+      cursorRef.current.style.transform = `translateX(${leftOffset * 3}px)`;
+      cursorRef.current.style.transform = `translateY(${topOffset * 3}px)`;
+
+      target.style.transform = `translateX(${leftOffset * 6}px)`;
+      target.style.transform = `translateY(${topOffset * 4}px)`;
+    }
+  };
+
   // really a reset, because it won't default back
   // after we manually setted the size and all
-  const onMouseLeave = (e: MouseEvent) => {};
+  const onMouseLeave = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    setIsCursorLocked(false);
+    if (cursorRef.current) {
+      cursorRef.current.style.width = `${BASE_DIMENSION}px`;
+      cursorRef.current.style.height = `${BASE_DIMENSION}px`;
+
+      cursorRef.current.style.transform = `translate(0,0)`;
+
+      e.currentTarget.style.transform = `translate(0,0)`;
+      e.currentTarget.style.scale = "1";
+    }
+  };
 
   return (
     <>
       <div
         className={classNames(styles.inner)}
         onMouseEnter={onMouseEnter}
-        onMouseLeave={() => setIsCursorLocked(false)}
+        onMouseLeave={onMouseLeave}
+        onMouseMove={onMouseMove}
       ></div>
       <div ref={cursorRef} className={styles.cursorContent}></div>
     </>
