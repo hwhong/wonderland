@@ -11,16 +11,15 @@ export function ScrollCarousel() {
       var scroll = this.scrollY;
 
       if (card1Ref.current) {
-        card1Ref.current.style.transform;
       }
     });
   }, []);
 
   return (
-    <section>
+    <div className={styles.root}>
       <div ref={card1Ref} className={styles.card}></div>
       <div ref={card2Ref} className={styles.card}></div>
       <div ref={card3Ref} className={styles.card}></div>
-    </section>
+    </div>
   );
 }
