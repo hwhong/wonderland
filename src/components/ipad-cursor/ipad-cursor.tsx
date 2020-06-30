@@ -61,7 +61,7 @@ export function IpadCursor() {
   const onMouseLeave = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     setIsCursorLocked(false);
     if (cursorRef.current) {
-      cursorRef.current.style.width = `${BASE_DIMENSION}px`;
+      cursorRef.current.style.width = `${BASE_DIMENSION}px`; 	
       cursorRef.current.style.height = `${BASE_DIMENSION}px`;
 
       cursorRef.current.style.transform = `translate(0,0)`;

@@ -12,10 +12,10 @@ function App() {
     <div className={styles.root}>
       <Header>Wonderland</Header>
       {/* <Cursor /> */}
-      <ColorBlur />
+      {/* <ColorBlur /> */}
       {/* <ScrollListener /> */}
       {/* <MovingBlob /> */}
-      <IpadCursor />
+      {/* <IpadCursor /> */}
     </div>
   );
 }
