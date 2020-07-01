@@ -10,7 +10,10 @@ export function ScrollCarousel() {
     window.addEventListener("scroll", function (event) {
       var scroll = this.scrollY;
 
-      if (card1Ref.current) {
+      if (card3Ref.current && 0.0001 * scroll < 1) {
+        card3Ref.current.style.transform = `translateY(${
+          -0.1 * scroll
+        }px) scale(${0.001 * scroll})`;
       }
     });
   }, []);
