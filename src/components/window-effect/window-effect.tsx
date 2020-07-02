@@ -7,7 +7,9 @@ export function WindowEffect() {
       <div className={styles.root}>
         <div className={styles.content}></div>
       </div>
-      <div className={styles.overlay}></div>
+      <div className={styles.overlay}>
+        <div className={styles.overlayContent}></div>
+      </div>
     </>
   );
 }
