@@ -8,6 +8,9 @@ export function WindowEffect() {
     window.addEventListener("scroll", function (event) {});
   }, []);
 
+  // the window in overlay might not work. need to make
+  // overlay the window itself because of background issues
+  // need to be transparent
   return (
     <>
       <div className={styles.root}>
