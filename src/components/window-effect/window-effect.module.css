@@ -4,3 +4,17 @@
   height: 2000px;
   width: 80%;
 }
+
+.content {
+  background-color: darkolivegreen;
+  position: -webkit-sticky;
+  position: sticky;
+  margin: 0 auto;
+  height: 300px;
+  width: 400px;
+  top: 25%;
+  bottom: 25%;
+}
+
+.overlay {
+}
