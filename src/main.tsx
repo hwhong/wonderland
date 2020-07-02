@@ -7,6 +7,7 @@ import { ColorBlur } from "./components/color-blur/color-blur";
 import { MovingBlob } from "./components/moving-blob/moving-blob";
 import { IpadCursor } from "./components/ipad-cursor/ipad-cursor";
 import { ScrollCarousel } from "./components/scroll-carousel/scroll-carousel";
+import { WindowEffect } from "./components/window-effect/window-effect";
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
       {/* <ScrollListener /> */}
       {/* <MovingBlob /> */}
       {/* <IpadCursor /> */}
-      <ScrollCarousel />
+      {/* <ScrollCarousel /> */}
+      <WindowEffect />
     </div>
   );
 }
