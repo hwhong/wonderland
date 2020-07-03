@@ -1,5 +1,5 @@
 .root {
-  background-color: beige;
+  /* background-color: beige; */
   margin: 50px auto;
   height: 2000px;
   width: 80%;
@@ -19,7 +19,7 @@
 .overlay {
   justify-content: center;
   align-items: center;
-  background-color: darkgrey;
+  background-color: black;
   /* position: absolute; */
   /* height: 100vh;
   width: 100vw; */
@@ -35,7 +35,8 @@
 }
 
 .window {
-  border: 10px solid black;
+  border: 10px solid white;
+  background-color: black;
   width: 500px;
   height: 150px;
 }

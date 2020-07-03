@@ -5,7 +5,9 @@ export function WindowEffect() {
   const windowRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
-    window.addEventListener("scroll", function (event) {});
+    window.addEventListener("scroll", function (event) {
+      let scroll = this.scrollY;
+    });
   }, []);
 
   // the window in overlay might not work. need to make
