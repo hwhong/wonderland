@@ -8,18 +8,33 @@ import { MovingBlob } from "./components/moving-blob/moving-blob";
 import { IpadCursor } from "./components/ipad-cursor/ipad-cursor";
 import { ScrollCarousel } from "./components/scroll-carousel/scroll-carousel";
 import { WindowEffect } from "./components/window-effect/window-effect";
+import { Sidebar } from "./components/sidebar/sidebar";
 
 function App() {
+  const [activeIndex, setActiveIndex] = React.useState(0);
+  const titles: string[] = [
+    "Header",
+    "Cursor",
+    "Color Blur",
+    "Moving Blob",
+    "Scroll Carousel",
+    "Window Effect",
+  ];
+  const stories: React.ReactNode[] = [];
+
   return (
     <div className={styles.root}>
-      <Header>Wonderland</Header>
+      {/* <Header>Wonderland</Header> */}
       {/* <Cursor /> */}
       {/* <ColorBlur /> */}
-      {/* <ScrollListener /> */}
       {/* <MovingBlob /> */}
       {/* <IpadCursor /> */}
       {/* <ScrollCarousel /> */}
-      <WindowEffect />
+      {/* <WindowEffect /> */}
+      <section className={styles.leftPane}>
+        <Sidebar onTitleClick={setActiveIndex} titles={titles} />
+      </section>
+      <section className={styles.rightPane}></section>
     </div>
   );
 }

@@ -1,8 +1,13 @@
 .root {
-  flex-direction: column;
-  align-items: center;
   display: flex;
   /* height: 100vh; */
   width: 100vw;
-  background-color: black;
+}
+
+.leftPane {
+  height: 100vh;
+  width: 30%;
+}
+
+.rightPane {
 }
