@@ -8,17 +8,17 @@ import { MovingBlob } from "./components/moving-blob/moving-blob";
 import { IpadCursor } from "./components/ipad-cursor/ipad-cursor";
 import { ScrollCarousel } from "./components/scroll-carousel/scroll-carousel";
 import { WindowEffect } from "./components/window-effect/window-effect";
-import { Sidebar } from "./components/sidebar/sidebar";
+import { Sidebar, SidebarItem } from "./components/sidebar/sidebar";
 
 function App() {
   const [activeIndex, setActiveIndex] = React.useState(0);
-  const titles: string[] = [
-    "Header",
-    "Cursor",
-    "Color Blur",
-    "Moving Blob",
-    "Scroll Carousel",
-    "Window Effect",
+  const titles: SidebarItem[] = [
+    { title: "Header", iconName: "heading" },
+    { title: "Cursor", iconName: "mouse-pointer" },
+    { title: "Color Blur", iconName: "palette" },
+    { title: "Moving Blob", iconName: "kiwi-bird" },
+    { title: "Scroll Carousel", iconName: "scroll" },
+    { title: "Window Effect", iconName: "window-maximize" },
   ];
   const stories: React.ReactNode[] = [];
 

@@ -1,0 +1,14 @@
+.root {
+  background-color: #fefefe;
+  height: 100%;
+  width: 100%;
+}
+
+.sidebarItem {
+  flex-direction: row;
+  align-items: center;
+  padding: 12px 0;
+  font-size: 12px;
+  color: #031137;
+  display: flex;
+}
