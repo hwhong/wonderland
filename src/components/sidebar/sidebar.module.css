@@ -10,8 +10,32 @@
 .operations {
   justify-content: start;
   align-items: center;
-  padding: 10px 0;
+  padding: 10px;
   display: flex;
+}
+
+.circle {
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 8px;
+  height: 12px;
+  width: 12px;
+}
+
+.red {
+  background-color: #fc346e;
+}
+
+.yellow {
+  background-color: #fecf01;
+}
+
+.green {
+  background-color: #1ccf98;
+}
+
+.header {
+  margin-left: 8px;
 }
 
 .main {
@@ -25,7 +49,13 @@
   display: flex;
 }
 
+.icon {
+  margin-left: 8px;
+}
+
 .text {
+  font-family: sans-serif;
+  font-weight: bold;
   font-size: 12px;
   color: #031137;
   margin-left: 8px;

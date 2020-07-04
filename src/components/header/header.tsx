@@ -10,16 +10,22 @@ enum HeaderSize {
 }
 
 interface HeaderProps {
+  className: string;
+
   children: string;
 
   size: HeaderSize;
 }
 
 export function Header(props: HeaderProps) {
-  const { children, size } = props;
+  const { className, children, size } = props;
   const sizeClass = size ? styles[size] : "";
 
-  return <span className={classNames(styles.root, sizeClass)}>{children}</span>;
+  return (
+    <span className={classNames(styles.root, sizeClass, className)}>
+      {children}
+    </span>
+  );
 }
 
 Header.defaultProps = {

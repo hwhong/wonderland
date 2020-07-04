@@ -9,15 +9,22 @@ import { IpadCursor } from "./components/ipad-cursor/ipad-cursor";
 import { ScrollCarousel } from "./components/scroll-carousel/scroll-carousel";
 import { WindowEffect } from "./components/window-effect/window-effect";
 import { Sidebar, SidebarItem } from "./components/sidebar/sidebar";
+import {
+  faMousePointer,
+  faPalette,
+  faKiwiBird,
+  faScroll,
+  faWindowRestore,
+} from "@fortawesome/free-solid-svg-icons";
 
 function App() {
   const [activeIndex, setActiveIndex] = React.useState(0);
   const sidebarItems: SidebarItem[] = [
-    { title: "Cursor", iconName: "mouse-pointer" },
-    { title: "Color Blur", iconName: "palette" },
-    { title: "Moving Blob", iconName: "kiwi-bird" },
-    { title: "Scroll Carousel", iconName: "scroll" },
-    { title: "Window Effect", iconName: "window-maximize" },
+    { title: "Cursor", iconName: faMousePointer },
+    { title: "Color Blur", iconName: faPalette },
+    { title: "Moving Blob", iconName: faKiwiBird },
+    { title: "Scroll Carousel", iconName: faScroll },
+    { title: "Window Effect", iconName: faWindowRestore },
   ];
   const stories: React.ReactNode[] = [];
 
