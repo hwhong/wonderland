@@ -12,8 +12,7 @@ import { Sidebar, SidebarItem } from "./components/sidebar/sidebar";
 
 function App() {
   const [activeIndex, setActiveIndex] = React.useState(0);
-  const titles: SidebarItem[] = [
-    { title: "Header", iconName: "heading" },
+  const sidebarItems: SidebarItem[] = [
     { title: "Cursor", iconName: "mouse-pointer" },
     { title: "Color Blur", iconName: "palette" },
     { title: "Moving Blob", iconName: "kiwi-bird" },
@@ -32,7 +31,7 @@ function App() {
       {/* <ScrollCarousel /> */}
       {/* <WindowEffect /> */}
       <section className={styles.leftPane}>
-        <Sidebar onTitleClick={setActiveIndex} titles={titles} />
+        <Sidebar onTitleClick={setActiveIndex} sidebarItems={sidebarItems} />
       </section>
       <section className={styles.rightPane}></section>
     </div>

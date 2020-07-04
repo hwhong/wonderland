@@ -1,14 +1,32 @@
 .root {
   background-color: #fefefe;
+  flex-direction: column;
+  border-right: 1px solid #d4d4d4;
+  display: flex;
   height: 100%;
   width: 100%;
+}
+
+.operations {
+  justify-content: start;
+  align-items: center;
+  padding: 10px 0;
+  display: flex;
+}
+
+.main {
+  padding: 30px 10px;
 }
 
 .sidebarItem {
   flex-direction: row;
   align-items: center;
-  padding: 12px 0;
+  padding: 12px 10px;
+  display: flex;
+}
+
+.text {
   font-size: 12px;
   color: #031137;
-  display: flex;
+  margin-left: 8px;
 }

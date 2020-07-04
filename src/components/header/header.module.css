@@ -20,7 +20,7 @@
   text-align: center;
   color: transparent;
   font-weight: 700;
-  font-size: 5em;
+  /* font-size: 5em; */
 }
 
 @keyframes bg {
@@ -30,4 +30,17 @@
   100% {
     background-position-x: 10000px;
   }
+}
+
+.one {
+  font-size: 2em;
+}
+.two {
+  font-size: 1.5em;
+}
+.three {
+  font-size: 1.17em;
+}
+.four {
+  font-size: 1em;
 }
