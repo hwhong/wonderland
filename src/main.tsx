@@ -38,7 +38,11 @@ function App() {
       {/* <ScrollCarousel /> */}
       {/* <WindowEffect /> */}
       <section className={styles.leftPane}>
-        <Sidebar onTitleClick={setActiveIndex} sidebarItems={sidebarItems} />
+        <Sidebar
+          onTitleClick={setActiveIndex}
+          sidebarItems={sidebarItems}
+          activeIndex={activeIndex}
+        />
       </section>
       <section className={styles.rightPane}></section>
     </div>

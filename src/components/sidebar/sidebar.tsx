@@ -9,10 +9,14 @@ export interface SidebarProps {
   // List of Sidebar Titles to render
   sidebarItems: SidebarItem[];
 
+  // Current Active Index
+  activeIndex: number;
+
   onTitleClick: (i: number) => void;
 }
 
 export function Sidebar(props: SidebarProps) {
+  const { sidebarItems, activeIndex, onTitleClick } = props;
   return (
     <div className={styles.root}>
       <div className={styles.operations}>
@@ -25,8 +29,13 @@ export function Sidebar(props: SidebarProps) {
           Wonderland
         </Header>
       </div>
-      {props.sidebarItems.map((item) => (
-        <SidebarItem title={item.title} iconName={item.iconName} />
+      {sidebarItems.map((item, i) => (
+        <SidebarItem
+          title={item.title}
+          active={activeIndex === i}
+          iconName={item.iconName}
+          onClick={() => onTitleClick(i)}
+        />
       ))}
     </div>
   );
@@ -34,12 +43,19 @@ export function Sidebar(props: SidebarProps) {
 
 export interface SidebarItem {
   title: string;
+  active?: boolean;
   iconName: IconDefinition;
+  onClick?: () => void;
 }
 
 function SidebarItem(item: SidebarItem) {
   return (
-    <div className={styles.sidebarItem}>
+    <div
+      className={classNames(styles.sidebarItem, {
+        [styles.activeItem]: item.active,
+      })}
+      onClick={item.onClick}
+    >
       <FontAwesomeIcon
         className={styles.icon}
         fixedWidth
