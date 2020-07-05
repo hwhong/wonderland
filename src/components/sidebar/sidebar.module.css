@@ -3,7 +3,6 @@
   background-color: #fefefe;
   flex-direction: column;
   border-radius: 4px;
-  opacity: 0.8;
   display: flex;
   height: 100%;
   width: 100%;
@@ -45,7 +44,7 @@
 }
 
 .sidebarItem {
-  transition: background-color 0.3s;
+  transition: background-color 0.2s;
   flex-direction: row;
   align-items: center;
   border-radius: 4px;
