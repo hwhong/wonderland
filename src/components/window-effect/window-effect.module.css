@@ -1,6 +1,6 @@
 .root {
   /* background-color: beige; */
-  margin: 50px 0;
+
   height: 2000px;
 }
 
@@ -9,7 +9,7 @@
   position: -webkit-sticky;
   position: sticky;
   margin: 0 auto;
-  height: 300px;
+  height: 250px;
   width: 400px;
   top: 25%;
   bottom: 25%;
@@ -32,9 +32,13 @@
 
 .window {
   border: 10px solid white;
-  background-color: black;
-  height: 150px;
 
+  height: 150px;
+  top: 30%;
+  /* bottom: 50%; */
+  margin: 0 auto;
+  width: 300px;
+  position: sticky;
   /* two stickeys */
   /* position: sticky;
   top: 25%;
