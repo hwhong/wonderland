@@ -16,4 +16,11 @@
 
 .rightPane {
   width: 100%;
+  overflow: auto;
+}
+
+.rightWrapper {
+  /* can't put the auto here because it will affect 
+	the window affect position sticky  */
+  /* overflow: auto; */
 }

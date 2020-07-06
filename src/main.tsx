@@ -43,14 +43,16 @@ function App() {
       {/* <IpadCursor /> */}
       {/* <ScrollCarousel /> */}
       {/* <WindowEffect /> */}
-      <section className={styles.leftPane}>
-        <Sidebar
-          onTitleClick={setActiveIndex}
-          sidebarItems={sidebarItems}
-          activeIndex={activeIndex}
-        />
+
+      <Sidebar
+        onTitleClick={setActiveIndex}
+        sidebarItems={sidebarItems}
+        activeIndex={activeIndex}
+      />
+
+      <section className={styles.rightPane}>
+        <div className={styles.rightWrapper}>{stories[activeIndex]}</div>
       </section>
-      <section className={styles.rightPane}>{stories[activeIndex]}</section>
     </div>
   );
 }
