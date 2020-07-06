@@ -21,6 +21,7 @@
 
 .rightWrapper {
   /* can't put the auto here because it will affect 
-	the window affect position sticky  */
+	the window affect position sticky. since that feature
+	relies on the increase height  */
   /* overflow: auto; */
 }
