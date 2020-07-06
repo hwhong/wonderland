@@ -14,13 +14,13 @@ export function WindowEffect() {
   // overlay the window itself because of background issues
   // need to be transparent
   return (
-    <>
+    <div className={styles.rootContainer}>
       <div className={styles.root}>
         <div className={styles.content}></div>
       </div>
       <div className={styles.overlay}>
         <div className={styles.window} ref={windowRef}></div>
       </div>
-    </>
+    </div>
   );
 }

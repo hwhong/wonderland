@@ -26,7 +26,13 @@ function App() {
     { title: "Scroll Carousel", iconName: faScroll },
     { title: "Window Effect", iconName: faWindowRestore },
   ];
-  const stories: React.ReactNode[] = [];
+  const stories: React.ReactNode[] = [
+    <div>Cursor Placeholder</div>,
+    <div>Color Blur Placeholder</div>,
+    <div>Moving Blob Placeholder</div>,
+    <div>Scroll Carousel Placeholder</div>,
+    <WindowEffect />,
+  ];
 
   return (
     <div className={styles.root}>
@@ -44,7 +50,7 @@ function App() {
           activeIndex={activeIndex}
         />
       </section>
-      <section className={styles.rightPane}></section>
+      <section className={styles.rightPane}>{stories[activeIndex]}</section>
     </div>
   );
 }

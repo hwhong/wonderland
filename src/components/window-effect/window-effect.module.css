@@ -1,3 +1,8 @@
+.windowContainer {
+  justify-content: center;
+  display: flex;
+}
+
 .root {
   /* background-color: beige; */
   margin: 50px auto;
@@ -30,7 +35,7 @@
   z-index: 10;
   top: 0;
   left: 0;
-  position: fixed;
+  /* position: fixed; */
   display: flex;
 }
 
