@@ -29,7 +29,7 @@ function App() {
   const stories: React.ReactNode[] = [
     <div>Cursor Placeholder</div>,
     <div>Color Blur Placeholder</div>,
-    <div>Moving Blob Placeholder</div>,
+    <MovingBlob />,
     <div>Scroll Carousel Placeholder</div>,
     <WindowEffect />,
   ];
@@ -39,10 +39,8 @@ function App() {
       {/* <Header>Wonderland</Header> */}
       {/* <Cursor /> */}
       {/* <ColorBlur /> */}
-      {/* <MovingBlob /> */}
       {/* <IpadCursor /> */}
       {/* <ScrollCarousel /> */}
-      {/* <WindowEffect /> */}
 
       <Sidebar
         onTitleClick={setActiveIndex}
