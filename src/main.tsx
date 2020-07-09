@@ -15,33 +15,28 @@ import {
   faKiwiBird,
   faScroll,
   faWindowRestore,
+  faThLarge,
 } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
   const [activeIndex, setActiveIndex] = React.useState(0);
   const sidebarItems: SidebarItem[] = [
     { title: "Cursor", iconName: faMousePointer },
-    { title: "Color Blur", iconName: faPalette },
     { title: "Moving Blob", iconName: faKiwiBird },
     { title: "Scroll Carousel", iconName: faScroll },
     { title: "Window Effect", iconName: faWindowRestore },
+    { title: "CSS Grid", iconName: faThLarge },
   ];
   const stories: React.ReactNode[] = [
     <div>Cursor Placeholder</div>,
-    <div>Color Blur Placeholder</div>,
     <MovingBlob />,
     <div>Scroll Carousel Placeholder</div>,
     <WindowEffect />,
+    <CSSGrid />,
   ];
 
   return (
     <div className={styles.root}>
-      {/* <Header>Wonderland</Header> */}
-      {/* <Cursor /> */}
-      {/* <ColorBlur /> */}
-      {/* <IpadCursor /> */}
-      {/* <ScrollCarousel /> */}
-
       <Sidebar
         onTitleClick={setActiveIndex}
         sidebarItems={sidebarItems}

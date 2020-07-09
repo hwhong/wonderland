@@ -1,0 +1,7 @@
+.root {
+  margin: auto 20px;
+}
+
+.grid {
+  display: grid;
+}
