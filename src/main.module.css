@@ -24,4 +24,6 @@
 	the window affect position sticky. since that feature
 	relies on the increase height  */
   /* overflow: auto; */
+  height: 100%;
+  width: 100%;
 }

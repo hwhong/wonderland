@@ -17,6 +17,7 @@ import {
   faWindowRestore,
   faThLarge,
 } from "@fortawesome/free-solid-svg-icons";
+import { CSSGrid } from "./components/css-grid/css-grid";
 
 function App() {
   const [activeIndex, setActiveIndex] = React.useState(0);
