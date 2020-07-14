@@ -1,3 +1,9 @@
+.root {
+  cursor: none;
+  height: 100%;
+  width: 100%;
+}
+
 .outer {
   background-color: bisque;
   border-radius: 4px;

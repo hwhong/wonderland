@@ -11,13 +11,13 @@ import { WindowEffect } from "./components/window-effect/window-effect";
 import { Sidebar, SidebarItem } from "./components/sidebar/sidebar";
 import {
   faMousePointer,
-  faPalette,
   faKiwiBird,
   faScroll,
   faWindowRestore,
   faThLarge,
 } from "@fortawesome/free-solid-svg-icons";
 import { CSSGrid } from "./components/css-grid/css-grid";
+import classNames from "classnames";
 
 function App() {
   const [activeIndex, setActiveIndex] = React.useState(0);
@@ -29,7 +29,7 @@ function App() {
     { title: "CSS Grid", iconName: faThLarge },
   ];
   const stories: React.ReactNode[] = [
-    <div>Cursor Placeholder</div>,
+    <IpadCursor />,
     <MovingBlob />,
     <div>Scroll Carousel Placeholder</div>,
     <WindowEffect />,
@@ -37,7 +37,11 @@ function App() {
   ];
 
   return (
-    <div className={styles.root}>
+    <div
+      className={classNames(styles.root, {
+        [styles.noCursor]: activeIndex === 0,
+      })}
+    >
       <Sidebar
         onTitleClick={setActiveIndex}
         sidebarItems={sidebarItems}
