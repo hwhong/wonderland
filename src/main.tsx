@@ -19,7 +19,7 @@ function App() {
   const sidebarItems: SidebarItem[] = [
     { title: "Cursor", iconName: faMousePointer },
     { title: "Moving Blob", iconName: faKiwiBird },
-    { title: "Scroll Carousel", iconName: faScroll },
+    { title: "Sticky Scroll", iconName: faScroll },
     { title: "Window Effect", iconName: faWindowRestore },
     { title: "CSS Grid", iconName: faThLarge },
   ];
