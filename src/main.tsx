@@ -10,9 +10,11 @@ import {
   faScroll,
   faWindowRestore,
   faThLarge,
+  faSoap,
 } from "@fortawesome/free-solid-svg-icons";
 import { CSSGrid } from "./components/css-grid/css-grid";
 import classNames from "classnames";
+import { Popover } from "./components/popover/popover";
 
 function App() {
   const [activeIndex, setActiveIndex] = React.useState(0);
@@ -22,6 +24,7 @@ function App() {
     { title: "Sticky Scroll", iconName: faScroll },
     { title: "Window Effect", iconName: faWindowRestore },
     { title: "CSS Grid", iconName: faThLarge },
+    { title: "Popover", iconName: faSoap },
   ];
   const stories: React.ReactNode[] = [
     <IpadCursor />,
@@ -29,6 +32,7 @@ function App() {
     <div>Scroll Carousel Placeholder</div>,
     <WindowEffect />,
     <CSSGrid />,
+    <Popover />,
   ];
 
   return (
