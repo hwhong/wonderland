@@ -5,13 +5,13 @@ export function Popover() {
   const handlePosition = (
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
   ) => {
-    const ID = e.currentTarget.getAttribute("data-hover-id");
-    const wrapper = document.getElementById(ID);
+    const ID = e.currentTarget.getAttribute("data-hover-id")!;
+    const wrapper = document.getElementById(ID)!;
     let top = "";
     if (
       !(
         e.currentTarget.getBoundingClientRect().top + wrapper.offsetHeight >
-        innerHeight
+        window.innerHeight
       )
     ) {
       top = `${e.clientY + e.currentTarget.offsetHeight}px`;
@@ -33,7 +33,7 @@ export function Popover() {
     wrapper.setAttribute("data-hover-wrapper", "");
     wrapper.setAttribute("id", ID);
     wrapper.setAttribute("style", "opacity: 0; transform: scale(.8)");
-    wrapper.innerHTML = hoverContent;
+    wrapper.innerHTML = hoverContent ?? "<div>Not Working</div>";
     document.body.append(wrapper);
     wrapper.setAttribute("style", handlePosition(e));
   };
