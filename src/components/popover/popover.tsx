@@ -38,13 +38,20 @@ export function Popover() {
     wrapper.setAttribute("style", handlePosition(e));
   };
 
-  const onMouseMove = (
-    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
-  ) => {};
+  const onMouseMove = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    const ID = e.currentTarget.getAttribute("data-hover-id")!;
+    const wrapper = document.getElementById(ID)!;
+    wrapper.setAttribute("style", handlePosition(e));
+  };
 
-  const onMouseLeave = (
-    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
-  ) => {};
+  const onMouseLeave = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    const ID = e.currentTarget.getAttribute("data-hover-id")!;
+    document.getElementById(ID)!.style.opacity = "0";
+    document.getElementById(ID)!.style.transform = "scale(.8)";
+    setTimeout(() => {
+      document.getElementById(ID)!.remove();
+    }, 150);
+  };
 
   return (
     <div className={styles.root}>
