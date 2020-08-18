@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./popover.module.css";
+import "./popover.css";
 
 export function Popover() {
   const handlePosition = (
@@ -54,10 +54,10 @@ export function Popover() {
   };
 
   return (
-    <div className={styles.root}>
+    <div className="root">
       <a
         href="#"
-        className={styles.content}
+        className="content"
         onMouseOver={onMouseOver}
         onMouseMove={onMouseMove}
         onMouseLeave={onMouseLeave}
