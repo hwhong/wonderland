@@ -26,13 +26,17 @@ function App() {
     { title: "CSS Grid", iconName: faThLarge },
     { title: "Popover", iconName: faSoap },
   ];
+
+  const popoverContent =
+    "<div class='hover-content'> <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/344846/500px-P1040705_copyGemeentehuis_Zundert.jpg' /> <p>Zundert is a municipality and town in the south of the Netherlands, in the province of North Brabant.</p> </div>";
+
   const stories: React.ReactNode[] = [
     <IpadCursor />,
     <MovingBlob />,
     <div>Scroll Carousel Placeholder</div>,
     <WindowEffect />,
     <CSSGrid />,
-    <Popover />,
+    <Popover content={popoverContent} />,
   ];
 
   return (

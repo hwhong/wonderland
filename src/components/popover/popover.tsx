@@ -1,7 +1,11 @@
 import React from "react";
 import "./popover.css";
 
-export function Popover() {
+interface PopoverProps {
+  content: React.ReactChild | string;
+}
+
+export function Popover(props: PopoverProps) {
   const handlePosition = (
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
   ) => {
@@ -32,7 +36,7 @@ export function Popover() {
     e.currentTarget.setAttribute("data-hover-id", ID);
     wrapper.setAttribute("data-hover-wrapper", "");
     wrapper.setAttribute("id", ID);
-    wrapper.setAttribute("style", "opacity: 0; transform: scale(.8)");
+    // wrapper.setAttribute("style", "opacity: 0; transform: scale(.8)");
     wrapper.innerHTML = hoverContent ?? "<div>Not Working</div>";
     document.body.append(wrapper);
     wrapper.setAttribute("style", handlePosition(e));
