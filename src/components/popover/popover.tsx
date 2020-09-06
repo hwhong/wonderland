@@ -6,6 +6,7 @@ interface PopoverProps {
 }
 
 export function Popover(props: PopoverProps) {
+  const { content } = props;
   const handlePosition = (
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
   ) => {
@@ -36,7 +37,7 @@ export function Popover(props: PopoverProps) {
     e.currentTarget.setAttribute("data-hover-id", ID);
     wrapper.setAttribute("data-hover-wrapper", "");
     wrapper.setAttribute("id", ID);
-    // wrapper.setAttribute("style", "opacity: 0; transform: scale(.8)");
+
     wrapper.innerHTML = hoverContent ?? "<div>Not Working</div>";
     document.body.append(wrapper);
     wrapper.setAttribute("style", handlePosition(e));
@@ -65,10 +66,7 @@ export function Popover(props: PopoverProps) {
         onMouseOver={onMouseOver}
         onMouseMove={onMouseMove}
         onMouseLeave={onMouseLeave}
-        data-hover-content="<div class='hover-content'>
-    <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/344846/500px-P1040705_copyGemeentehuis_Zundert.jpg' />
-    <p>Zundert is a municipality and town in the south of the Netherlands, in the province of North Brabant.</p>
-    </div>"
+        data-hover-content={content}
       >
         Zundert, Netherlands
       </a>
